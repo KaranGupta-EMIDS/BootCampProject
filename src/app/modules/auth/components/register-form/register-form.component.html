@@ -1,0 +1,52 @@
+<form action="">
+  <mat-form-field>
+    <input matInput placeholder="First Name" required name="firstName" #firstName
+      [(ngModel)]="userRegisterRequest.firstName" [ngModelOptions]="{standalone: true}"
+      (blur)="nameChanged('firstName',$event)">
+    <mat-icon matSuffix>perm_identity</mat-icon>
+    <mat-error *ngIf="userRegisterFromError.firstName">
+      {{userRegisterFromError.firstName}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Last Name" required name="lastName" #lastName
+      [(ngModel)]="userRegisterRequest.lastName" [ngModelOptions]="{standalone: true}"
+      (blur)="nameChanged('lastName',$event)">
+    <mat-icon matSuffix>perm_identity</mat-icon>
+    <mat-error *ngIf="userRegisterFromError.lastName">
+      {{userRegisterFromError.lastName}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Email/Phone Number" required name="compositeField"
+      [(ngModel)]="userRegisterRequest.compositeField" [ngModelOptions]="{standalone: true}" #compositeField
+      (blur)="compositeFieldChanged('compositeField',$event)">
+    <mat-icon matSuffix>perm_identity</mat-icon>
+    <mat-error *ngIf="userRegisterFromError.compositeField">
+      {{userRegisterFromError.compositeField}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Password" type="password" #password required minlength="6"
+      [(ngModel)]="userRegisterRequest.password" [ngModelOptions]="{standalone: true}"
+      (blur)="passwordChanged('password',$event)">
+    <mat-error *ngIf="userRegisterFromError.password">
+      {{userRegisterFromError.password}}
+    </mat-error>
+    <mat-icon matSuffix>lock</mat-icon>
+
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Confirm Password" type="password" #confirmPassword
+      (blur)="passwordChanged('confirmPassword',$event)" [ngModelOptions]="{standalone: true}" required minlength="6"
+      [(ngModel)]="userRegisterRequest.confirmPassword">
+    <mat-error *ngIf="userRegisterFromError.confirmPassword">
+      {{userRegisterFromError.confirmPassword}}
+    </mat-error>
+    <mat-icon matSuffix>lock</mat-icon>
+  </mat-form-field>
+  <button type="button" (click)="signUpUser()" mat-raised-button color="primary" [disabled]="!buttonAction.enable"
+    class="login-button">
+    Sign Up
+  </button>
+</form>

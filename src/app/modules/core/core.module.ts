@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ApiService } from 'src/app/modules/core/services/api.service';
-
+import { ApiService } from './services/api.service';
+import { UserProfileComponent } from '@core-components/user-profile/user-profile.component';
+import { CoreRoutingModule } from './core-routing.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    UserProfileComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    CoreRoutingModule
   ],
   providers: [ApiService],
 })
