@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthDashboardComponent } from '@auth-components/auth-dashboard/auth-dashboard.component';
@@ -15,12 +16,16 @@ import { LoginFormComponent } from '@auth-components/login-form/login-form.compo
 import { RegisterFormComponent } from '@auth-components/register-form/register-form.component';
 import { SignInSignUpService } from './sign-in-sign-up.service';
 import { SharedModule } from '../shared/shared.module';
+import { EqualValidator } from './directives/equal-validator.directive';
+import { CompositeFieldValidator } from './directives/composite-field-validator.directive';
 
 @NgModule({
   declarations: [
     AuthDashboardComponent,
     RegisterFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    EqualValidator,
+    CompositeFieldValidator
   ],
   imports: [
     CommonModule,
@@ -33,11 +38,10 @@ import { SharedModule } from '../shared/shared.module';
     MatButtonModule,
     MatCheckboxModule,
     MatIconModule,
+    MatSnackBarModule,
     SharedModule,
     AuthRoutingModule,
   ],
-  providers:[
-    SignInSignUpService
-  ]
+  providers: [SignInSignUpService],
 })
 export class AuthModule {}
