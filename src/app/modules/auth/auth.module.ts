@@ -16,7 +16,6 @@ import { LoginFormComponent } from '@auth-components/login-form/login-form.compo
 import { RegisterFormComponent } from '@auth-components/register-form/register-form.component';
 import { SignInSignUpService } from './sign-in-sign-up.service';
 import { SharedModule } from '../shared/shared.module';
-import { EqualValidator } from './directives/equal-validator.directive';
 import { CompositeFieldValidator } from './directives/composite-field-validator.directive';
 
 @NgModule({
@@ -24,7 +23,6 @@ import { CompositeFieldValidator } from './directives/composite-field-validator.
     AuthDashboardComponent,
     RegisterFormComponent,
     LoginFormComponent,
-    EqualValidator,
     CompositeFieldValidator
   ],
   imports: [
