@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserRegister } from 'src/app/modules/core/interfaces/user-register';
+import { CustomErrorStateMatcher } from '../../../core/utilities/error-state-matcher';
 import { SignInSignUpService } from '../../sign-in-sign-up.service';
 
 @Component({
@@ -12,6 +13,7 @@ import { SignInSignUpService } from '../../sign-in-sign-up.service';
 })
 export class RegisterFormComponent implements OnInit {
   public userRegisterForm: FormGroup;
+  public matcher: CustomErrorStateMatcher;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -21,61 +23,38 @@ export class RegisterFormComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.userRegisterForm = this.formBuilder.group({
-      firstName: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(30),
+    this.userRegisterForm = this.formBuilder.group(
+      {
+        firstName: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(2),
+            Validators.maxLength(30),
+          ],
         ],
-      ],
-      lastName: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(30),
+        lastName: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(2),
+            Validators.maxLength(30),
+          ],
         ],
-      ],
-      compositeField: ['', [Validators.required]],
-      password: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(12),
+        compositeField: ['', [Validators.required]],
+        password: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(4),
+            Validators.maxLength(12),
+          ],
         ],
-      ],
-      confirmPassword: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(12),
-        ],
-      ],
-    });
-  }
-
-  get firstName() {
-    return this.userRegisterForm.get('firstName');
-  }
-
-  get lastName() {
-    return this.userRegisterForm.get('lastName');
-  }
-
-  get compositeField() {
-    return this.userRegisterForm.get('compositeField');
-  }
-
-  get password() {
-    return this.userRegisterForm.get('password');
-  }
-
-  get confirmPassword() {
-    return this.userRegisterForm.get('confirmPassword');
+        confirmPassword: ['', [Validators.required]],
+      },
+      { validator: this.checkPasswords }
+    );
+    this.matcher = new CustomErrorStateMatcher();
   }
 
   public signUpUser(formValue: UserRegister) {
@@ -101,5 +80,13 @@ export class RegisterFormComponent implements OnInit {
     this.snackBar.open(message, 'OK', {
       duration: 3000,
     });
+  }
+
+  private checkPasswords(group: FormGroup) {
+    // here we have the 'passwords' group
+    let pass = group.controls.password.value;
+    let confirmPass = group.controls.confirmPassword.value;
+
+    return pass === confirmPass ? null : { notSame: true };
   }
 }
