@@ -1,25 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SharedModule } from '../shared/shared.module';
-
-// import { LoginComponent } from './login/login.component';
-// import { SignupComponent } from './signup/signup.component';
-// import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AuthDashboardComponent } from '@auth-components/auth-dashboard/auth-dashboard.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
 
 const authRoutes: Routes = [
-  // { path: 'login', component: LoginComponent },
-  // { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginFormComponent },
+  { path: 'register', component: RegisterFormComponent },
   // { path: 'forgot', component: ForgotPasswordComponent },
-  // { path: '', redirectTo: 'login', pathMatch: 'full' }
+  { path: 'auth', component: AuthDashboardComponent },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' }
 ];
 
 @NgModule({
-  imports: [SharedModule, RouterModule.forChild(authRoutes)],
-  declarations: [
-    // LoginComponent,
-    // SignupComponent,
-    // ForgotPasswordComponent
-  ],
+  imports: [RouterModule.forChild(authRoutes)],
+  declarations: [ ],
   exports: [RouterModule]
 })
 export class AuthRoutingModule {}
