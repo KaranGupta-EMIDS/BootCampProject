@@ -21,6 +21,7 @@ export class ContactListComponent implements  AfterViewInit {
   public displayedColumns: string[];
   public dataSource: MatTableDataSource<UserData>;
   public pageSizeOptions = PAGE_SIZE_OPTIONS;
+  public filterKey: string;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -48,11 +49,12 @@ export class ContactListComponent implements  AfterViewInit {
   }
 
   applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    if (this.filterKey) {
+      this.dataSource.filter = this.filterKey.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
+      if (this.dataSource.paginator) {
+        this.dataSource.paginator.firstPage();
+      }
     }
   }
 
@@ -74,5 +76,9 @@ export class ContactListComponent implements  AfterViewInit {
         PROFILE_PIC[Math.round(Math.random() * (PROFILE_PIC.length - 1))],
       location: LOCATION[Math.round(Math.random() * (PROFILE_PIC.length - 1))],
     };
+  }
+
+  public clearSearchFilter() {
+    this.dataSource.filter = this.filterKey = null;
   }
 }
