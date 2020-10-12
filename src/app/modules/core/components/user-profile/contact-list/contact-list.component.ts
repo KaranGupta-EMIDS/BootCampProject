@@ -90,7 +90,7 @@ export class ContactListComponent implements AfterViewInit {
     let message: string;
     if (!this.isAlreadyAFriend(compositeField)) {
       message = 'Contact added successfully to your friend’s list.';
-      localStorage.setItem(compositeField, '');
+      localStorage.setItem(compositeField, 'true');
     } else {
       message =
         'Failed to add the contact to your friend’s list due to the server/transaction error. Please try again later. ';
@@ -98,7 +98,7 @@ export class ContactListComponent implements AfterViewInit {
     this._snackBar.open(message, 'OK', { duration: 3000 });
   }
 
-  private isAlreadyAFriend(compositeField: string) {
-    return localStorage.getItem(compositeField);
+  public isAlreadyAFriend(compositeField: string) {
+    return localStorage.getItem(compositeField) === 'true';
   }
 }
