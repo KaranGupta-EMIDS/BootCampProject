@@ -9,6 +9,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FormsModule } from '@angular/forms';
 
 import { ApiService } from './services/api.service';
 import { CoreRoutingModule } from './core-routing.module';
@@ -16,7 +19,6 @@ import { UserProfileComponent } from '@core-components/user-profile/user-profile
 import { HeaderComponent } from '@core-components/common/header/header.component';
 import { FooterComponent } from '@core-components/common/footer/footer.component';
 import { ContactListComponent } from '@core-components/user-profile/contact-list/contact-list.component';
-import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { MatSortModule } from '@angular/material/sort';
     MatMenuModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSnackBarModule,
+    FormsModule,
   ],
   providers: [ApiService],
 })
