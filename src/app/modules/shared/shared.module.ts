@@ -4,13 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // import { AlertModule, TooltipModule } from 'ngx-bootstrap';
-// import { DefaultModalComponent } from './components/default-modal/default-modal.component';
-// import { AutoFocusDirective } from './directives/auto-focus.directive';
+import { DefaultModalComponent } from './components/default-modal/default-modal.component';
+import { AutoFocusDirective } from './directives/auto-focus.directive';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
-    // DefaultModalComponent,
-    // AutoFocusDirective
+    DefaultModalComponent,
+    AutoFocusDirective
   ],
   imports: [
     CommonModule,
@@ -27,8 +28,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     // AlertModule,
     // TooltipModule,
-    // DefaultModalComponent,
-    // AutoFocusDirective
+    DefaultModalComponent,
+    AutoFocusDirective
+  ],
+  providers:[
+    AuthGuard
   ]
 })
 export class SharedModule { }

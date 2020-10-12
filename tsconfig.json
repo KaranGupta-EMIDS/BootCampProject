@@ -15,6 +15,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths":{
+      "@auth-components/*": ["src/app/modules/auth/components/*"],
+      "@core-components/*": ["src/app/modules/core/components/*"],
+      "@shared-components/*": ["src/app/modules/shared/components/*"],
+      "@shared-services/*": ["src/app/modules/shared/services/*"],
+      "@shared-guards/*": ["src/app/modules/shared/guards/*"],
+    }
   }
 }

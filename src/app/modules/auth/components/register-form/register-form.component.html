@@ -1,0 +1,67 @@
+<form action="" [formGroup]="userRegisterForm" (ngSubmit)="signUpUser(userRegisterForm.value)">
+  <mat-form-field>
+    <input matInput placeholder="First Name" name="firstName" formControlName="firstName">
+    <mat-icon matSuffix>perm_identity</mat-icon>
+    <mat-error *ngIf="userRegisterForm.controls.firstName.touched && userRegisterForm.controls.firstName.hasError('required')">
+      First Name is required
+    </mat-error>
+    <mat-error *ngIf="userRegisterForm.controls.firstName.touched && userRegisterForm.controls.firstName.hasError('minlength')">
+      Minimum accepted text is of 2 characters
+    </mat-error>
+    <mat-error *ngIf="userRegisterForm.controls.firstName.touched && userRegisterForm.controls.firstName.hasError('maxlength')">
+      Maximum accepted text is of 30 characters
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Last Name" name="lastName" formControlName="lastName">
+    <mat-icon matSuffix>perm_identity</mat-icon>
+    <mat-error *ngIf="userRegisterForm.controls.lastName.touched && userRegisterForm.controls.lastName.hasError('required')">
+      Last Name is required
+    </mat-error>
+    <mat-error *ngIf="userRegisterForm.controls.lastName.touched && userRegisterForm.controls.lastName.hasError('minlength')">
+      Minimum accepted text is of 2 characters
+    </mat-error>
+    <mat-error *ngIf="userRegisterForm.controls.lastName.touched && userRegisterForm.controls.lastName.hasError('maxlength')">
+      Maximum accepted text is of 30 characters
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Email/Phone Number" name="compositeField" compositeField="true" formControlName="compositeField">
+    <mat-icon matSuffix>perm_identity</mat-icon>
+    <mat-error *ngIf="userRegisterForm.controls.compositeField.touched && userRegisterForm.controls.compositeField.hasError('required')">
+      Email/Phone Number is required
+    </mat-error>
+    <mat-error *ngIf="userRegisterForm.controls.compositeField.touched && userRegisterForm.controls.compositeField.hasError('mobile')">
+      Mobile Number is invalid.
+    </mat-error>
+    <mat-error *ngIf="userRegisterForm.controls.compositeField.touched && userRegisterForm.controls.compositeField.hasError('email')">
+      Email is invalid
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Password" type="password" formControlName="password">
+    <mat-error *ngIf="userRegisterForm.controls.password.touched && userRegisterForm.controls.password.hasError('required')">
+      Password is required
+    </mat-error>
+    <mat-error *ngIf="userRegisterForm.controls.password.touched && userRegisterForm.controls.password.hasError('minlength')">
+      Minimum accepted text is of 4 characters
+    </mat-error>
+    <mat-error *ngIf="userRegisterForm.controls.password.touched && userRegisterForm.controls.password.hasError('maxlength')">
+      Maximum accepted text is of 12 characters
+    </mat-error>
+    <mat-icon matSuffix>lock</mat-icon>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Confirm Password" type="password" [errorStateMatcher]="matcher" formControlName="confirmPassword">
+    <mat-error *ngIf="userRegisterForm.controls.confirmPassword.touched && userRegisterForm.controls.confirmPassword.hasError('required')">
+      Password is required
+    </mat-error>
+    <mat-error *ngIf="userRegisterForm.hasError('notSame')">
+      Password does not match
+    </mat-error>
+    <mat-icon matSuffix>lock</mat-icon>
+  </mat-form-field>
+  <button mat-raised-button color="primary" [disabled]="userRegisterForm.invalid" class="login-button">
+    Sign Up
+  </button>
+</form>
