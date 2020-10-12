@@ -2,6 +2,8 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 import {
   COMPOSITE_FIELD,
   DATE_OF_BIRTH,
@@ -17,16 +19,17 @@ import { UserData } from '../../../interfaces/user-data';
   templateUrl: 'contact-list.component.html',
   styleUrls: ['contact-list.component.css'],
 })
-export class ContactListComponent implements  AfterViewInit {
+export class ContactListComponent implements AfterViewInit {
   public displayedColumns: string[];
   public dataSource: MatTableDataSource<UserData>;
   public pageSizeOptions = PAGE_SIZE_OPTIONS;
   public filterKey: string;
+  public userList: Array<UserData>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() {
+  constructor(private _snackBar: MatSnackBar) {
     const self = this;
     this.displayedColumns = [
       'id',
@@ -35,12 +38,13 @@ export class ContactListComponent implements  AfterViewInit {
       'compositeField',
       'dateOfBirth',
       'location',
+      'addAsFriend',
     ];
-    const users = Array.from({ length: 50 }, (_, k) =>
+    this.userList = Array.from({ length: 50 }, (_, k) =>
       self.createNewUser(k + 1)
     );
 
-    this.dataSource = new MatTableDataSource(users);
+    this.dataSource = new MatTableDataSource(this.userList);
   }
 
   ngAfterViewInit() {
@@ -80,5 +84,21 @@ export class ContactListComponent implements  AfterViewInit {
 
   public clearSearchFilter() {
     this.dataSource.filter = this.filterKey = null;
+  }
+
+  public addAsFriend(compositeField: string) {
+    let message: string;
+    if (!this.isAlreadyAFriend(compositeField)) {
+      message = 'Contact added successfully to your friend’s list.';
+      localStorage.setItem(compositeField, 'true');
+    } else {
+      message =
+        'Failed to add the contact to your friend’s list due to the server/transaction error. Please try again later. ';
+    }
+    this._snackBar.open(message, 'OK', { duration: 3000 });
+  }
+
+  public isAlreadyAFriend(compositeField: string) {
+    return localStorage.getItem(compositeField) === 'true';
   }
 }
