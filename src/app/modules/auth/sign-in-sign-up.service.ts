@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UserLogin } from '../core/interfaces/user-login';
 import { UserRegister } from '../core/interfaces/user-register';
 
 @Injectable({ providedIn: 'root' })
@@ -9,11 +11,30 @@ export class SignInSignUpService {
     return localStorage.getItem(userRegisterRequest.compositeField);
   }
 
-  public saveUserDetails(userRegisterRequest: UserRegister){
+  public saveUserDetails(userRegisterRequest: UserRegister) {
     localStorage.setItem(
       userRegisterRequest.compositeField,
       userRegisterRequest.password
     );
+    this.setUserLoggedInStorage();
   }
 
+  public signInUser(userLogin: UserLogin): boolean {
+    let result = localStorage.getItem(userLogin.compositeField);
+    return result && userLogin.password === result;
+  }
+
+  public signOutUser() {
+    return new Observable((observer) => {
+      localStorage.clear();
+      observer.next();
+      setTimeout(() => {
+        observer.complete();
+      }, 2000);
+    });
+  }
+
+  public setUserLoggedInStorage() {
+    localStorage.setItem('isUserLoggedIn', 'true');
+  }
 }

@@ -1,24 +1,25 @@
-<form action="">
+<form [formGroup]="userLoginForm" (ngSubmit)="signInUser(userLoginForm.value)">
   <mat-form-field>
-    <input matInput placeholder="Email" required name="email" ngModel #email="ngModel">
-    <ng-template *ngIf="email.invalid">
-      <mat-error>Email is required</mat-error>
-    </ng-template>
+    <input matInput placeholder="Email/Phone No."  compositeField="true" formControlName="compositeField" >
+    <mat-error *ngIf="userLoginForm.controls.compositeField.touched && userLoginForm.controls.compositeField.hasError('required')">
+      Email/Phone Number is required
+    </mat-error>
+    <mat-error *ngIf="userLoginForm.controls.compositeField.touched && userLoginForm.controls.compositeField.hasError('mobile')">
+      Mobile Number is invalid.
+    </mat-error>
+    <mat-error *ngIf="userLoginForm.controls.compositeField.touched && userLoginForm.controls.compositeField.hasError('email')">
+      Email is invalid
+    </mat-error>
     <mat-icon matSuffix>email</mat-icon>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Password" type="password" required minlength="6" name="password" ngModel
-      #password="ngModel">
-    <mat-error *ngIf="password.errors && password.errors.required">
+    <input matInput placeholder="Password" type="password" formControlName="password">
+    <mat-error *ngIf="userLoginForm.controls.password.touched && userLoginForm.controls.password.hasError('required')">
       Password is required
-    </mat-error>
-    <mat-error *ngIf="password.errors && password.errors.minlength">
-      Password must be of length 6
     </mat-error>
     <mat-icon matSuffix>lock</mat-icon>
   </mat-form-field>
-  <mat-checkbox>Remember Me!</mat-checkbox>
-  <button mat-raised-button color="primary" class="login-button">
+  <button mat-raised-button color="primary"  [disabled]="userLoginForm.invalid" class="login-button">
     Sign In
   </button>
 </form>
