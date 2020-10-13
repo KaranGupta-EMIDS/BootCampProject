@@ -3,12 +3,11 @@ import { CanLoad } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthGuard implements CanLoad {
-
   canLoad(): Observable<boolean> | Promise<boolean> | boolean {
-    console.log('guard reached');
-    return true;
+    let isUserLoggedIn = localStorage.getItem('isUserLoggedIn');
+    return isUserLoggedIn && isUserLoggedIn === 'true';
   }
 }
