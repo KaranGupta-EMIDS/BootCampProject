@@ -49,8 +49,8 @@
           <!-- Add As Friend Column -->
         <ng-container matColumnDef="addAsFriend">
           <th mat-header-cell *matHeaderCellDef>  </th>
-          <td mat-cell *matCellDef="let row" >
-            <mat-icon (click)="addAsFriend(row)" title="Add As Friend" class="clickable" *ngIf="!row.isFriend" >person_add</mat-icon>
+          <td mat-cell *matCellDef="let row;let i=index;" >
+            <mat-icon (click)="addAsFriend(row,i)" title="Add As Friend" class="clickable" *ngIf="!row.isFriend" >person_add</mat-icon>
           </td>
         </ng-container>
 

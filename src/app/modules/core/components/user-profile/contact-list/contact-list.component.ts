@@ -90,14 +90,11 @@ export class ContactListComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = this.filterKey = null;
   }
 
-  public addAsFriend(userData: UserData) {
+  public addAsFriend(userData: UserData, index: number) {
     let message: string;
     let userList: Array<UserData> = getUserListFromStorage();
     if (Array.isArray(userList) && userList.length > 0) {
       if (!userData.isFriend) {
-        let index = userList.findIndex(
-          (user: UserData) => user.id === userData.id
-        );
         if (typeof index === 'number') {
           userList[index].isFriend = !userList[index].isFriend;
           userData.isFriend = !userData.isFriend;
