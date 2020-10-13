@@ -14,6 +14,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 
 import { ApiService } from './services/api.service';
+import { MockService } from './services/mock.service';
 import { CoreRoutingModule } from './core-routing.module';
 import { UserProfileComponent } from '@core-components/user-profile/user-profile.component';
 import { HeaderComponent } from '@core-components/common/header/header.component';
@@ -43,6 +44,6 @@ import { ContactListComponent } from '@core-components/user-profile/contact-list
     MatSnackBarModule,
     FormsModule,
   ],
-  providers: [ApiService],
+  providers: [ApiService, MockService],
 })
 export class CoreModule {}

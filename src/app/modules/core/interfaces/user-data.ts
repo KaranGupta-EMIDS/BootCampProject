@@ -5,4 +5,5 @@ export interface UserData {
   compositeField: string;
   dateOfBirth: string;
   location: string;
+  isFriend: boolean;
 }
