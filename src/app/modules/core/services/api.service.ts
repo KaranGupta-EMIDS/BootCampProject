@@ -32,7 +32,7 @@ export class ApiService {
   public getMockData(): Observable<Array<UserData>> {
     return this._http.get('assets/mock/user-list.json').pipe(
       map((userList: Array<UserData>) => {
-        console.log(userList);
+        // console.log(userList);
         return userList;
       })
     );
