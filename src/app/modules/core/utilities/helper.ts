@@ -1,5 +1,5 @@
 export const makeClone = (original) => {
-    return JSON.parse(JSON.stringify(original));
+  return JSON.parse(JSON.stringify(original));
 };
 
 export const validateEmail = (email) => {
@@ -11,8 +11,16 @@ export const validateMobileNo = (mobileNo) => {
   if (mobileNo) {
     mobileNo = mobileNo.trim();
     if (mobileNo.length > 0 && mobileNo.length === 10) {
-        return !isNaN(parseInt(mobileNo))
+      return !isNaN(parseInt(mobileNo));
     }
   }
   return false;
 };
+
+export function getUserListFromStorage() {
+  return JSON.parse(localStorage.getItem('userlist'));
+}
+
+export function setUsetListInStorage(userList) {
+  localStorage.setItem('userlist', JSON.stringify(userList));
+}

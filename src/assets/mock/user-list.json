@@ -1,0 +1,452 @@
+[
+  {
+    "id": "1",
+    "name": "Jack O.",
+    "compositeField": "josh.rogers@reqres.in",
+    "dateOfBirth": "30-11-1993",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg",
+    "location": "KUWAIT",
+    "isFriend": false
+  },
+  {
+    "id": "2",
+    "name": "Levi A.",
+    "compositeField": "987654312",
+    "dateOfBirth": "31-09-1983",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg",
+    "location": "PARIS",
+    "isFriend": false
+  },
+  {
+    "id": "3",
+    "name": "Olivia V.",
+    "compositeField": "356497998",
+    "dateOfBirth": "25-10-1965",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg",
+    "location": "KUWAIT",
+    "isFriend": false
+  },
+  {
+    "id": "4",
+    "name": "Theodore V.",
+    "compositeField": "michael.lawson@reqres.in",
+    "dateOfBirth": "29-01-1997",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg",
+    "location": "NEW ORLEANS",
+    "isFriend": false
+  },
+  {
+    "id": "5",
+    "name": "Jack T.",
+    "compositeField": "josh.rogers@reqres.in",
+    "dateOfBirth": "30-12-1996",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg",
+    "location": "INDIA",
+    "isFriend": false
+  },
+  {
+    "id": "6",
+    "name": "Isla C.",
+    "compositeField": "josh.rogers@reqres.in",
+    "dateOfBirth": "01-02-1973",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg",
+    "location": "INDIA",
+    "isFriend": false
+  },
+  {
+    "id": "7",
+    "name": "Theodore T.",
+    "compositeField": "michael.lawson@reqres.in",
+    "dateOfBirth": "29-01-1997",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg",
+    "location": "AUSTRALIA",
+    "isFriend": false
+  },
+  {
+    "id": "8",
+    "name": "Violet O.",
+    "compositeField": "987654312",
+    "dateOfBirth": "25-10-1965",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg",
+    "location": "PARIS",
+    "isFriend": false
+  },
+  {
+    "id": "9",
+    "name": "Arthur A.",
+    "compositeField": "michael.lawson@reqres.in",
+    "dateOfBirth": "01-02-1973",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg",
+    "location": "KUWAIT",
+    "isFriend": false
+  },
+  {
+    "id": "10",
+    "name": "Isla O.",
+    "compositeField": "987654312",
+    "dateOfBirth": "31-09-1983",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg",
+    "location": "INDIA",
+    "isFriend": false
+  },
+  {
+    "id": "11",
+    "name": "Isla E.",
+    "compositeField": "lindsay.ferguson@reqres.in",
+    "dateOfBirth": "30-11-1993",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg",
+    "location": "KUWAIT",
+    "isFriend": false
+  },
+  {
+    "id": "12",
+    "name": "Olivia T.",
+    "compositeField": "byron.fields@reqres.in",
+    "dateOfBirth": "01-02-1973",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg",
+    "location": "INDIA",
+    "isFriend": false
+  },
+  {
+    "id": "13",
+    "name": "Jack C.",
+    "compositeField": "987654312",
+    "dateOfBirth": "29-01-1997",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg",
+    "location": "NEW ORLEANS",
+    "isFriend": false
+  },
+  {
+    "id": "14",
+    "name": "Oliver V.",
+    "compositeField": "lindsay.ferguson@reqres.in",
+    "dateOfBirth": "01-02-1973",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg",
+    "location": "KUWAIT",
+    "isFriend": false
+  },
+  {
+    "id": "15",
+    "name": "Asher J.",
+    "compositeField": "byron.fields@reqres.in",
+    "dateOfBirth": "30-12-1996",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg",
+    "location": "TORONTO",
+    "isFriend": false
+  },
+  {
+    "id": "16",
+    "name": "Violet V.",
+    "compositeField": "356497998",
+    "dateOfBirth": "25-10-1965",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg",
+    "location": "TORONTO",
+    "isFriend": false
+  },
+  {
+    "id": "17",
+    "name": "Isabella J.",
+    "compositeField": "byron.fields@reqres.in",
+    "dateOfBirth": "30-11-1993",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg",
+    "location": "KUWAIT",
+    "isFriend": false
+  },
+  {
+    "id": "18",
+    "name": "Asher I.",
+    "compositeField": "byron.fields@reqres.in",
+    "dateOfBirth": "30-12-1996",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg",
+    "location": "INDIA",
+    "isFriend": false
+  },
+  {
+    "id": "19",
+    "name": "Amelia C.",
+    "compositeField": "michael.lawson@reqres.in",
+    "dateOfBirth": "25-10-1965",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg",
+    "location": "KUWAIT",
+    "isFriend": false
+  },
+  {
+    "id": "20",
+    "name": "Violet O.",
+    "compositeField": "josh.rogers@reqres.in",
+    "dateOfBirth": "31-09-1983",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg",
+    "location": "INDIA",
+    "isFriend": false
+  },
+  {
+    "id": "21",
+    "name": "Theodore A.",
+    "compositeField": "356497998",
+    "dateOfBirth": "29-01-1997",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg",
+    "location": "PARIS",
+    "isFriend": false
+  },
+  {
+    "id": "22",
+    "name": "Theodore O.",
+    "compositeField": "356497998",
+    "dateOfBirth": "30-11-1993",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg",
+    "location": "PARIS",
+    "isFriend": false
+  },
+  {
+    "id": "23",
+    "name": "Oliver A.",
+    "compositeField": "byron.fields@reqres.in",
+    "dateOfBirth": "25-10-1965",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg",
+    "location": "TORONTO",
+    "isFriend": false
+  },
+  {
+    "id": "24",
+    "name": "Charlotte L.",
+    "compositeField": "josh.rogers@reqres.in",
+    "dateOfBirth": "30-12-1996",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg",
+    "location": "NEW ORLEANS",
+    "isFriend": false
+  },
+  {
+    "id": "25",
+    "name": "Charlotte M.",
+    "compositeField": "356497998",
+    "dateOfBirth": "31-09-1983",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg",
+    "location": "INDIA",
+    "isFriend": false
+  },
+  {
+    "id": "26",
+    "name": "Asher M.",
+    "compositeField": "josh.rogers@reqres.in",
+    "dateOfBirth": "01-02-1973",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg",
+    "location": "NEW ORLEANS",
+    "isFriend": false
+  },
+  {
+    "id": "27",
+    "name": "Jasper A.",
+    "compositeField": "lindsay.ferguson@reqres.in",
+    "dateOfBirth": "01-02-1973",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg",
+    "location": "KUWAIT",
+    "isFriend": false
+  },
+  {
+    "id": "28",
+    "name": "Mia I.",
+    "compositeField": "michael.lawson@reqres.in",
+    "dateOfBirth": "30-11-1993",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg",
+    "location": "AUSTRALIA",
+    "isFriend": false
+  },
+  {
+    "id": "29",
+    "name": "Jack J.",
+    "compositeField": "lindsay.ferguson@reqres.in",
+    "dateOfBirth": "01-02-1973",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg",
+    "location": "PARIS",
+    "isFriend": false
+  },
+  {
+    "id": "30",
+    "name": "Oliver O.",
+    "compositeField": "josh.rogers@reqres.in",
+    "dateOfBirth": "31-09-1983",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg",
+    "location": "PARIS",
+    "isFriend": false
+  },
+  {
+    "id": "31",
+    "name": "Oliver E.",
+    "compositeField": "byron.fields@reqres.in",
+    "dateOfBirth": "01-02-1973",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg",
+    "location": "PARIS",
+    "isFriend": false
+  },
+  {
+    "id": "32",
+    "name": "Olivia O.",
+    "compositeField": "byron.fields@reqres.in",
+    "dateOfBirth": "25-10-1965",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg",
+    "location": "AUSTRALIA",
+    "isFriend": false
+  },
+  {
+    "id": "33",
+    "name": "Mia C.",
+    "compositeField": "josh.rogers@reqres.in",
+    "dateOfBirth": "31-09-1983",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg",
+    "location": "INDIA",
+    "isFriend": false
+  },
+  {
+    "id": "34",
+    "name": "Theodore J.",
+    "compositeField": "lindsay.ferguson@reqres.in",
+    "dateOfBirth": "25-10-1965",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg",
+    "location": "PARIS",
+    "isFriend": false
+  },
+  {
+    "id": "35",
+    "name": "Mia O.",
+    "compositeField": "michael.lawson@reqres.in",
+    "dateOfBirth": "29-01-1997",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg",
+    "location": "TORONTO",
+    "isFriend": false
+  },
+  {
+    "id": "36",
+    "name": "Olivia A.",
+    "compositeField": "987654312",
+    "dateOfBirth": "31-09-1983",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/mrmoiree/128.jpg",
+    "location": "TORONTO",
+    "isFriend": false
+  },
+  {
+    "id": "37",
+    "name": "Isabella A.",
+    "compositeField": "987654312",
+    "dateOfBirth": "25-10-1965",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg",
+    "location": "PARIS",
+    "isFriend": false
+  },
+  {
+    "id": "38",
+    "name": "Theodore O.",
+    "compositeField": "987654312",
+    "dateOfBirth": "30-12-1996",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg",
+    "location": "KUWAIT",
+    "isFriend": false
+  },
+  {
+    "id": "39",
+    "name": "Jasper M.",
+    "compositeField": "michael.lawson@reqres.in",
+    "dateOfBirth": "01-02-1973",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg",
+    "location": "TORONTO",
+    "isFriend": false
+  },
+  {
+    "id": "40",
+    "name": "Charlotte A.",
+    "compositeField": "lindsay.ferguson@reqres.in",
+    "dateOfBirth": "29-01-1997",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg",
+    "location": "PARIS",
+    "isFriend": false
+  },
+  {
+    "id": "41",
+    "name": "Amelia O.",
+    "compositeField": "356497998",
+    "dateOfBirth": "30-12-1996",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg",
+    "location": "INDIA",
+    "isFriend": false
+  },
+  {
+    "id": "42",
+    "name": "Cora M.",
+    "compositeField": "987654312",
+    "dateOfBirth": "29-01-1997",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg",
+    "location": "PARIS",
+    "isFriend": false
+  },
+  {
+    "id": "43",
+    "name": "Atticus M.",
+    "compositeField": "byron.fields@reqres.in",
+    "dateOfBirth": "31-09-1983",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/russoedu/128.jpg",
+    "location": "PARIS",
+    "isFriend": false
+  },
+  {
+    "id": "44",
+    "name": "Olivia A.",
+    "compositeField": "987654312",
+    "dateOfBirth": "01-02-1973",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg",
+    "location": "INDIA",
+    "isFriend": false
+  },
+  {
+    "id": "45",
+    "name": "Olivia L.",
+    "compositeField": "josh.rogers@reqres.in",
+    "dateOfBirth": "29-01-1997",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg",
+    "location": "INDIA",
+    "isFriend": false
+  },
+  {
+    "id": "46",
+    "name": "Levi A.",
+    "compositeField": "lindsay.ferguson@reqres.in",
+    "dateOfBirth": "25-10-1965",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg",
+    "location": "NEW ORLEANS",
+    "isFriend": false
+  },
+  {
+    "id": "47",
+    "name": "Violet O.",
+    "compositeField": "987654312",
+    "dateOfBirth": "29-01-1997",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/hebertialmeida/128.jpg",
+    "location": "KUWAIT",
+    "isFriend": false
+  },
+  {
+    "id": "48",
+    "name": "Jasper T.",
+    "compositeField": "987654312",
+    "dateOfBirth": "31-09-1983",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg",
+    "location": "NEW ORLEANS",
+    "isFriend": false
+  },
+  {
+    "id": "49",
+    "name": "Asher A.",
+    "compositeField": "michael.lawson@reqres.in",
+    "dateOfBirth": "31-09-1983",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg",
+    "location": "KUWAIT",
+    "isFriend": false
+  },
+  {
+    "id": "50",
+    "name": "Mia J.",
+    "compositeField": "987654312",
+    "dateOfBirth": "29-01-1997",
+    "profilePic": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg",
+    "location": "TORONTO",
+    "isFriend": false
+  }
+]
