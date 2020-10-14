@@ -26,7 +26,7 @@ export class SignInSignUpService {
 
   public signOutUser() {
     return new Observable((observer) => {
-      localStorage.clear();
+      // localStorage.clear();
       observer.next();
       setTimeout(() => {
         observer.complete();

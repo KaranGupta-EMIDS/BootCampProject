@@ -147,5 +147,6 @@ export class UserProfileComponent implements OnInit {
 
   public updateForm(formValue: UserProfile) {
     localStorage.setItem('myProfile', JSON.stringify(formValue));
+    this.snackBar.open('Profile saved successfully', 'OK', {'duration':3000});
   }
 }
