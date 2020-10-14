@@ -18,16 +18,12 @@ import { AuthGuard } from './guards/auth.guard';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    // AlertModule.forRoot(),
-    // TooltipModule.forRoot()
   ],
   exports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    // AlertModule,
-    // TooltipModule,
     DefaultModalComponent,
     AutoFocusDirective
   ],

@@ -1,6 +1,32 @@
-.container-fluid{
-	padding: 0px;
+.container-fluid {
+  padding: 0px;
 }
-.row{
-	margin: 0px;
+
+.row {
+  margin: 0px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.w-35{
+  width: 35%;
+}
+
+.w-30{
+  width: 30%;
+}
+
+.update-button {
+  margin-top: 20px;
+  display: block;
+  width: 80%;
+  margin: 20px auto;
 }

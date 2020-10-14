@@ -11,7 +11,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 import { ApiService } from './services/api.service';
 import { MockService } from './services/mock.service';
@@ -20,6 +24,8 @@ import { UserProfileComponent } from '@core-components/user-profile/user-profile
 import { HeaderComponent } from '@core-components/common/header/header.component';
 import { FooterComponent } from '@core-components/common/footer/footer.component';
 import { ContactListComponent } from '@core-components/user-profile/contact-list/contact-list.component';
+import { OnlyNumberDirective } from './directives/only-number.directive';
+import { StringFilterByPipe } from './pipes/string-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +33,8 @@ import { ContactListComponent } from '@core-components/user-profile/contact-list
     FooterComponent,
     UserProfileComponent,
     ContactListComponent,
+    OnlyNumberDirective,
+    StringFilterByPipe
   ],
   imports: [
     CommonModule,
@@ -43,6 +51,11 @@ import { ContactListComponent } from '@core-components/user-profile/contact-list
     MatPaginatorModule,
     MatSnackBarModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxMatSelectSearchModule,
   ],
   providers: [ApiService, MockService],
 })
