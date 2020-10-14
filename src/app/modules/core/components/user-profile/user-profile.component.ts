@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DATE_FORMATS } from '../../constants/appConstants';
 import { StateCity } from '../../interfaces/state-city';
 import { UserProfile } from '../../interfaces/user-profile';
 import { MockService } from '../../services/mock.service';
+import { validateEmail, validateMobileNo } from '../../utilities/helper';
 
 @Component({
   selector: 'app-user-profile',
@@ -18,14 +20,18 @@ export class UserProfileComponent implements OnInit {
   public stateFilter;
   public cityFilter;
   public masterStateCityList: Array<StateCity>;
+  public minDate: Date;
+  public maxDate: Date;
 
   constructor(
     private snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
     private mockService: MockService
   ) {
-    // this.screenScope = { profile: false, contactList: true }; correct
-    this.screenScope = { profile: true, contactList: false };
+    this.screenScope = { profile: false, contactList: true };
+    const currentYear = new Date().getFullYear();
+    this.minDate = new Date(currentYear - 20, 0, 1);
+    this.maxDate = new Date(currentYear + 1, 11, 31);
   }
 
   ngOnInit() {
@@ -46,19 +52,26 @@ export class UserProfileComponent implements OnInit {
 
   private setDefaultValuesInForm() {
     let userProfile: UserProfile;
-    let existingProfile:UserProfile = JSON.parse(localStorage.getItem('myProfile'))
+    let existingProfile: UserProfile = JSON.parse(
+      localStorage.getItem('myProfile')
+    );
+    let compositeField = localStorage.getItem('userId');
     userProfile = {
       fullName:
         existingProfile && existingProfile.fullName
           ? existingProfile.fullName
           : '',
       emailId:
-        existingProfile && existingProfile.fullName
-          ? existingProfile.fullName
+        existingProfile && existingProfile.emailId
+          ? existingProfile.emailId
+          : compositeField && validateEmail(compositeField)
+          ? compositeField
           : '',
       mobileNo:
-        existingProfile && existingProfile.fullName
-          ? existingProfile.fullName
+        existingProfile && existingProfile.mobileNo
+          ? existingProfile.mobileNo
+          : compositeField && validateMobileNo(compositeField)
+          ? compositeField
           : '',
       compositeField:
         existingProfile && existingProfile.fullName
@@ -133,6 +146,6 @@ export class UserProfileComponent implements OnInit {
   }
 
   public updateForm(formValue: UserProfile) {
-    localStorage.setItem('myProfile',JSON.stringify(formValue))
+    localStorage.setItem('myProfile', JSON.stringify(formValue));
   }
 }

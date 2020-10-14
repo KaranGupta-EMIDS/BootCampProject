@@ -16,7 +16,7 @@ export class SignInSignUpService {
       userRegisterRequest.compositeField,
       userRegisterRequest.password
     );
-    this.setUserLoggedInStorage();
+    this.setUserLoggedInStorage(userRegisterRequest.compositeField);
   }
 
   public signInUser(userLogin: UserLogin): boolean {
@@ -34,7 +34,7 @@ export class SignInSignUpService {
     });
   }
 
-  public setUserLoggedInStorage() {
-    localStorage.setItem('isUserLoggedIn', 'true');
+  public setUserLoggedInStorage(userID: string) {
+    localStorage.setItem('userId', userID);
   }
 }

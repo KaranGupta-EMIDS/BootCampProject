@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class AuthGuard implements CanLoad {
   canLoad(): Observable<boolean> | Promise<boolean> | boolean {
-    let isUserLoggedIn = localStorage.getItem('isUserLoggedIn');
-    return isUserLoggedIn && isUserLoggedIn === 'true';
+    let isUserLoggedIn = localStorage.getItem('userId');
+    return isUserLoggedIn && typeof isUserLoggedIn === 'string';
+    // return true;
   }
 }

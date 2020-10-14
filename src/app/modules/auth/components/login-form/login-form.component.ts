@@ -35,7 +35,7 @@ export class LoginFormComponent implements OnInit {
 
   public signInUser(formValue: UserLogin) {
     if (this.signInSignUpService.signInUser(formValue)) {
-      this.signInSignUpService.setUserLoggedInStorage();
+      this.signInSignUpService.setUserLoggedInStorage(formValue.compositeField);
       this.router.navigate(['/user/profile']);
     } else {
       const isEmailEntered =

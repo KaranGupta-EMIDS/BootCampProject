@@ -83,7 +83,6 @@ export class RegisterFormComponent implements OnInit {
   }
 
   private checkPasswords(group: FormGroup) {
-    // here we have the 'passwords' group
     let pass = group.controls.password.value;
     let confirmPass = group.controls.confirmPassword.value;
 

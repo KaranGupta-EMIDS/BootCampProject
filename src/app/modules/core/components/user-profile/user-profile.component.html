@@ -80,10 +80,10 @@
             </mat-form-field>
           </div>
           <mat-form-field appearance="fill">
-            <mat-label>Choose a date</mat-label>
-            <input formControlName="dateOfBirth" matInput [matDatepicker]="picker">
+            <mat-label>Date of Birth</mat-label>
+            <input formControlName="dateOfBirth" [min]="minDate" [max]="maxDate" matInput [matDatepicker]="picker">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <mat-datepicker #picker ></mat-datepicker>
             <mat-error
               *ngIf="userProfileForm.controls.dateOfBirth.touched && userProfileForm.controls.dateOfBirth.hasError('required')">
               Date of Birth is required

@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { MAT_DATE_FORMATS } from '@angular/material/core';
 
 import { ApiService } from './services/api.service';
 import { MockService } from './services/mock.service';
@@ -26,6 +27,7 @@ import { FooterComponent } from '@core-components/common/footer/footer.component
 import { ContactListComponent } from '@core-components/user-profile/contact-list/contact-list.component';
 import { OnlyNumberDirective } from './directives/only-number.directive';
 import { StringFilterByPipe } from './pipes/string-filter.pipe';
+import { DATE_FORMATS } from './constants/appConstants';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,7 @@ import { StringFilterByPipe } from './pipes/string-filter.pipe';
     UserProfileComponent,
     ContactListComponent,
     OnlyNumberDirective,
-    StringFilterByPipe
+    StringFilterByPipe,
   ],
   imports: [
     CommonModule,
@@ -57,6 +59,10 @@ import { StringFilterByPipe } from './pipes/string-filter.pipe';
     MatNativeDateModule,
     NgxMatSelectSearchModule,
   ],
-  providers: [ApiService, MockService],
+  providers: [
+    ApiService,
+    MockService,
+    { provide: MAT_DATE_FORMATS, useValue: DATE_FORMATS },
+  ],
 })
 export class CoreModule {}
