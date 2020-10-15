@@ -46,8 +46,8 @@ export class RegisterFormComponent implements OnInit {
           '',
           [
             Validators.required,
-            Validators.minLength(4),
-            Validators.maxLength(12),
+            Validators.minLength(3),
+            Validators.maxLength(10),
           ],
         ],
         confirmPassword: ['', [Validators.required]],

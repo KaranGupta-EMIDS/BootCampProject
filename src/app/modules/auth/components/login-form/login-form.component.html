@@ -17,6 +17,12 @@
     <mat-error *ngIf="userLoginForm.controls.password.touched && userLoginForm.controls.password.hasError('required')">
       Password is required
     </mat-error>
+    <mat-error *ngIf="userLoginForm.controls.password.touched && userLoginForm.controls.password.hasError('minlength')">
+      Minimum accepted text is of 3 characters
+    </mat-error>
+    <mat-error *ngIf="userLoginForm.controls.password.touched && userLoginForm.controls.password.hasError('maxlength')">
+      Maximum accepted text is of 10 characters
+    </mat-error>
     <mat-icon matSuffix>lock</mat-icon>
   </mat-form-field>
   <div class="forgot-pwd">
