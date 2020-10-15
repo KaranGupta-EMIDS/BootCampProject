@@ -17,12 +17,14 @@ import { RegisterFormComponent } from '@auth-components/register-form/register-f
 import { SignInSignUpService } from './sign-in-sign-up.service';
 import { SharedModule } from '../shared/shared.module';
 import { CompositeFieldValidator } from './directives/composite-field-validator.directive';
+import { ForgotPasswordComponent } from '@auth-components/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
     AuthDashboardComponent,
     RegisterFormComponent,
     LoginFormComponent,
+    ForgotPasswordComponent,
     CompositeFieldValidator
   ],
   imports: [
