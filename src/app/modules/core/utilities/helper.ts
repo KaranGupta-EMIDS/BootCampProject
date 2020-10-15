@@ -1,3 +1,5 @@
+import { FormGroup } from '@angular/forms';
+
 export const makeClone = (original) => {
   return JSON.parse(JSON.stringify(original));
 };
@@ -24,3 +26,12 @@ export function getUserListFromStorage() {
 export function setUsetListInStorage(userList) {
   localStorage.setItem('userlist', JSON.stringify(userList));
 }
+
+export function checkPasswords(group: FormGroup) {
+  // here we have the 'passwords' group
+  let pass = group.controls.password.value;
+  let confirmPass = group.controls.confirmPassword.value;
+
+  return pass === confirmPass ? null : { notSame: true };
+}
+

@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CustomErrorStateMatcher } from 'src/app/modules/core/utilities/error-state-matcher';
+import { checkPasswords } from 'src/app/modules/core/utilities/helper';
 import { SignInSignUpService } from '../../sign-in-sign-up.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class ResetPasswordComponent implements OnInit {
   public matcher: CustomErrorStateMatcher;
   private routeSubscription: Subscription;
   private compositeField: string;
+  private checkPasswords = checkPasswords;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -34,14 +36,6 @@ export class ResetPasswordComponent implements OnInit {
     this.routeSubscription = this.activatedRoute.params.subscribe((params) => {
       this.compositeField = params['uid'] ? params['uid'] : null;
     });
-  }
-
-  private checkPasswords(group: FormGroup) {
-    // here we have the 'passwords' group
-    let pass = group.controls.password.value;
-    let confirmPass = group.controls.confirmPassword.value;
-
-    return pass === confirmPass ? null : { notSame: true };
   }
 
   private initializeResetPasswordForm() {
