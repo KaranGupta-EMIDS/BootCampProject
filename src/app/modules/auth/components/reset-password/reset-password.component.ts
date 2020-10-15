@@ -18,13 +18,24 @@ export class ResetPasswordComponent implements OnInit {
   private routeSubscription: Subscription;
   private compositeField: string;
   private checkPasswords = checkPasswords;
+  public passwordVisibility: {
+    isVisible: boolean;
+    icon: string;
+    fieldType: string;
+  };
 
   constructor(
     private formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
     private snackBar: MatSnackBar,
     private signInSignUpService: SignInSignUpService
-  ) {}
+  ) {
+    this.passwordVisibility = {
+      isVisible: false,
+      icon: 'visibility_off',
+      fieldType: 'password',
+    };
+  }
 
   ngOnInit() {
     this.createRouteSubscription();
@@ -72,16 +83,28 @@ export class ResetPasswordComponent implements OnInit {
     });
     let message: string;
     if (this.compositeField && isExist) {
-      this.signInSignUpService.saveUserDetails({
-        compositeField: this.compositeField,
-        password: formValue.password,
-      });
-      message = `Password has been successfully reset.`;
+      if (this.compositeField == formValue.oldPassword) {
+        this.signInSignUpService.saveUserDetails({
+          compositeField: this.compositeField,
+          password: formValue.password,
+        });
+        message = `Password has been successfully reset.`;
+      } else {
+        message = `Old password entered is incorrect.`;
+      }
     } else {
       message = `Reset password failed due to the server error at this time. Please try again later.`;
     }
     this.snackBar.open(message, 'OK', {
       duration: 3000,
     });
+  }
+
+  public togglePasswordVisibility() {
+    this.passwordVisibility = {
+      isVisible: !this.passwordVisibility.isVisible,
+      icon: this.passwordVisibility.isVisible ? 'visibility' : 'visibility_off',
+      fieldType: this.passwordVisibility.isVisible ? 'text' : 'password',
+    };
   }
 }
