@@ -21,18 +21,20 @@ import { MAT_DATE_FORMATS } from '@angular/material/core';
 import { ApiService } from './services/api.service';
 import { MockService } from './services/mock.service';
 import { CoreRoutingModule } from './core-routing.module';
-import { UserProfileComponent } from '@core-components/user-profile/user-profile.component';
 import { HeaderComponent } from '@core-components/common/header/header.component';
 import { FooterComponent } from '@core-components/common/footer/footer.component';
-import { ContactListComponent } from '@core-components/user-profile/contact-list/contact-list.component';
 import { OnlyNumberDirective } from './directives/only-number.directive';
 import { StringFilterByPipe } from './pipes/string-filter.pipe';
 import { DATE_FORMATS } from './constants/appConstants';
+import { ContactListComponent } from '@core-components/user-dashboard/contact-list/contact-list.component';
+import { UserProfileComponent } from '@core-components/user-dashboard/user-profile/user-profile.component';
+import { UserDashboardComponent } from '@core-components/user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
+    UserDashboardComponent,
     UserProfileComponent,
     ContactListComponent,
     OnlyNumberDirective,

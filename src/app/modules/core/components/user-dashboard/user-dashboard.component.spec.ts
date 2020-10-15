@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { UserProfileComponent } from './user-profile.component';
+import { UserProfileComponent } from './user-dashboard.component';
 
 
 describe('UserProfileComponent', () => {
@@ -11,7 +11,7 @@ describe('UserProfileComponent', () => {
       declarations: [UserProfileComponent],
     }).compileComponents();
   }));
-  
+
   beforeEach(() => {
     fixture = TestBed.createComponent(UserProfileComponent);
     component = fixture.componentInstance;

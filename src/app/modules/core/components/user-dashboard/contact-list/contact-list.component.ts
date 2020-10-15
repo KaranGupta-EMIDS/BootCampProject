@@ -73,6 +73,8 @@ export class ContactListComponent implements OnInit, AfterViewInit {
       (userList: Array<UserData>) => {
         if (Array.isArray(userList) && userList.length > 0) {
           this.dataSource = new MatTableDataSource(userList);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
           setUsetListInStorage(userList);
         } else {
           throwError(new Error('Oops'));

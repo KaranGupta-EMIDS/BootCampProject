@@ -18,7 +18,7 @@ export class MockService {
     return this.apiService.getMockUserData();
   }
 
-  public getCities():Observable<Array<StateCity>> {
+  public getStateCities():Observable<Array<StateCity>> {
     return this.apiService.getMockStateCityData();
   }
 }

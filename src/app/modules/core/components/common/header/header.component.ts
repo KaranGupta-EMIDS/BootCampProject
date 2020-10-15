@@ -8,7 +8,6 @@ import { SignInSignUpService } from '../../../../auth/sign-in-sign-up.service';
   styleUrls: ['header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  @Output() screenScope = new EventEmitter();
 
   constructor(
     private signInSignUpService: SignInSignUpService,
@@ -19,14 +18,7 @@ export class HeaderComponent implements OnInit {
 
   public signOutUser() {
     this.signInSignUpService.signOutUser().subscribe(() => {
-      this.router.navigate(['/']);
-    });
-  }
-
-  public toggleScreenScope(screenName: string) {
-    this.screenScope.emit({
-      profile: screenName === 'profile' ? true : false,
-      contactList: screenName === 'contactList' ? true : false,
+      this.router.navigate(['/auth']);
     });
   }
 }

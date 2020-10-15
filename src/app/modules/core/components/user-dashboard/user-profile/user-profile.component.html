@@ -1,0 +1,93 @@
+<mat-card class="mat-elevation-z12">
+  <mat-card-title style="text-align:center;"><span id="card-title">My Profile</span></mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="userProfileForm" (ngSubmit)="updateForm(userProfileForm.value)">
+      <mat-form-field>
+        <input matInput placeholder="Full Name" name="fullName" formControlName="fullName">
+        <mat-icon matSuffix>perm_identity</mat-icon>
+        <mat-error
+          *ngIf="userProfileForm.controls.fullName.touched && userProfileForm.controls.fullName.hasError('required')">
+          Full Name is required
+        </mat-error>
+        <mat-error
+          *ngIf="userProfileForm.controls.fullName.touched && userProfileForm.controls.fullName.hasError('minlength')">
+          Minimum accepted text is of 2 characters
+        </mat-error>
+        <mat-error
+          *ngIf="userProfileForm.controls.fullName.touched && userProfileForm.controls.fullName.hasError('maxlength')">
+          Maximum accepted text is of 30 characters
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email ID" type="email" name="emailId" formControlName="emailId">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error
+          *ngIf="userProfileForm.controls.emailId.touched && userProfileForm.controls.emailId.hasError('required')">
+          Email ID is required
+        </mat-error>
+        <mat-error
+          *ngIf="userProfileForm.controls.emailId.touched && userProfileForm.controls.emailId.hasError('email')">
+          Incorrect Email format.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Mobile No." name="mobileNo" OnlyNumber=true formControlName="mobileNo">
+        <mat-icon matSuffix>smartphone</mat-icon>
+        <mat-error
+          *ngIf="userProfileForm.controls.mobileNo.touched && userProfileForm.controls.mobileNo.hasError('required')">
+          Mobile is required
+        </mat-error>
+        <mat-error *ngIf="userProfileForm.controls.mobileNo.touched && (userProfileForm.controls.mobileNo.hasError('minlength') ||
+                userProfileForm.controls.mobileNo.hasError('maxlength'))">
+          Invalid Mobile No
+        </mat-error>
+      </mat-form-field>
+      <div class="flex-row">
+        <mat-form-field class="w-35">
+          <mat-select formControlName="state" placeholder="State" name="state" (selectionChange)="filterCities($event)">
+            <mat-option>
+              <ngx-mat-select-search [(ngModel)]="stateFilter" (ngModelChange)="filterCities($event)"
+                [ngModelOptions]="{standalone: true}" [noEntriesFoundLabel]="'Not found'"></ngx-mat-select-search>
+            </mat-option>
+            <mat-option *ngFor="let state of filteredStates |stringFilterBy:stateFilter" [value]="state">
+              {{state}}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="userProfileForm.controls.state.touched && userProfileForm.controls.state.hasError('required')">
+            State is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-30">
+          <mat-select formControlName="city" placeholder="City" name="city">
+            <mat-option>
+              <ngx-mat-select-search [(ngModel)]="cityFilter" [ngModelOptions]="{standalone: true}"
+                [noEntriesFoundLabel]="'Not found'"></ngx-mat-select-search>
+            </mat-option>
+            <mat-option *ngFor="let city of filteredCities |stringFilterBy:cityFilter" [value]="city">
+              {{city}}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="userProfileForm.controls.city.touched && userProfileForm.controls.city.hasError('required')">
+            City is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <mat-form-field appearance="fill">
+        <mat-label>Date of Birth</mat-label>
+        <input formControlName="dateOfBirth" [min]="minDate" [max]="maxDate" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error
+          *ngIf="userProfileForm.controls.dateOfBirth.touched && userProfileForm.controls.dateOfBirth.hasError('required')">
+          Date of Birth is required
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" [disabled]="userProfileForm.invalid" class="update-button">
+        Update Profile
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
