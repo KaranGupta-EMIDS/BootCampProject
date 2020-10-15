@@ -7,15 +7,12 @@ import { UserRegister } from '../core/interfaces/user-register';
 export class SignInSignUpService {
   constructor() {}
 
-  public isUserExist(userRegisterRequest: UserRegister) {
-    return localStorage.getItem(userRegisterRequest.compositeField);
+  public isUserExist(param: { compositeField: string }) {
+    return localStorage.getItem(param.compositeField);
   }
 
-  public saveUserDetails(userRegisterRequest: UserRegister) {
-    localStorage.setItem(
-      userRegisterRequest.compositeField,
-      userRegisterRequest.password
-    );
+  public saveUserDetails(param: { compositeField: string; password: string }) {
+    localStorage.setItem(param.compositeField, param.password);
     this.setUserLoggedInStorage();
   }
 
