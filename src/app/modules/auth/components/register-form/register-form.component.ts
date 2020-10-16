@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserRegister } from 'src/app/modules/core/interfaces/user-register';
+import { checkPasswords } from 'src/app/modules/core/utilities/helper';
 import { CustomErrorStateMatcher } from '../../../core/utilities/error-state-matcher';
 import { SignInSignUpService } from '../../sign-in-sign-up.service';
 
@@ -14,6 +15,7 @@ import { SignInSignUpService } from '../../sign-in-sign-up.service';
 export class RegisterFormComponent implements OnInit {
   public userRegisterForm: FormGroup;
   public matcher: CustomErrorStateMatcher;
+  private checkPasswords = checkPasswords;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -46,8 +48,8 @@ export class RegisterFormComponent implements OnInit {
           '',
           [
             Validators.required,
-            Validators.minLength(4),
-            Validators.maxLength(12),
+            Validators.minLength(3),
+            Validators.maxLength(10),
           ],
         ],
         confirmPassword: ['', [Validators.required]],
@@ -82,10 +84,4 @@ export class RegisterFormComponent implements OnInit {
     });
   }
 
-  private checkPasswords(group: FormGroup) {
-    let pass = group.controls.password.value;
-    let confirmPass = group.controls.confirmPassword.value;
-
-    return pass === confirmPass ? null : { notSame: true };
-  }
 }

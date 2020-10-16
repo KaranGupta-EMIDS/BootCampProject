@@ -44,10 +44,10 @@
       Password is required
     </mat-error>
     <mat-error *ngIf="userRegisterForm.controls.password.touched && userRegisterForm.controls.password.hasError('minlength')">
-      Minimum accepted text is of 4 characters
+      Minimum accepted text is of 3 characters
     </mat-error>
     <mat-error *ngIf="userRegisterForm.controls.password.touched && userRegisterForm.controls.password.hasError('maxlength')">
-      Maximum accepted text is of 12 characters
+      Maximum accepted text is of 10 characters
     </mat-error>
     <mat-icon matSuffix>lock</mat-icon>
   </mat-form-field>
