@@ -13,7 +13,7 @@ export class SignInSignUpService {
 
   public saveUserDetails(param: { compositeField: string; password: string }) {
     localStorage.setItem(param.compositeField, param.password);
-    this.setUserLoggedInStorage(userRegisterRequest.compositeField);
+    this.setUserLoggedInStorage(param.compositeField);
   }
 
   public signInUser(userLogin: UserLogin): boolean {
