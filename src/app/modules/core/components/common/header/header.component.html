@@ -1,16 +1,17 @@
 <mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
   <span class="example-spacer"></span>
   <span id="profile-title">Welcome !</span>
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
     <mat-icon>account_circle</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>
+    <button mat-menu-item type="button" routerLink="/profile" >
+      <mat-icon>person</mat-icon>
+      <span>My Profile</span>
+    </button>
+    <button mat-menu-item type="button" routerLink="/contactlist" >
       <mat-icon>edit</mat-icon>
-      <span>Edit Profile</span>
+      <span>Contact List</span>
     </button>
     <button mat-menu-item type="button" (click)="signOutUser()" >
       <mat-icon>login</mat-icon>

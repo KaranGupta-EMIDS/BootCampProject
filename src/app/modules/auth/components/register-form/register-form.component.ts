@@ -83,4 +83,5 @@ export class RegisterFormComponent implements OnInit {
       duration: 3000,
     });
   }
+
 }

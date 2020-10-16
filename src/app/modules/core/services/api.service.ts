@@ -6,6 +6,7 @@ import { map, catchError } from 'rxjs/operators';
 
 // import { AppStateAction } from '../reducers/reducersAction/appStateAction';
 import { ApiBaseUrl } from '../constants/appConstants';
+import { StateCity } from '../interfaces/state-city';
 import { UserData } from '../interfaces/user-data';
 
 export const REQUEST_TYPE_GET = 'REQUEST_TYPE_GET', // request.method === 0
@@ -29,11 +30,20 @@ export class ApiService {
     withCredentials?: boolean;
   };
 
-  public getMockData(): Observable<Array<UserData>> {
+  public getMockUserData(): Observable<Array<UserData>> {
     return this._http.get('assets/mock/user-list.json').pipe(
       map((userList: Array<UserData>) => {
         // console.log(userList);
         return userList;
+      })
+    );
+  }
+
+  public getMockStateCityData(): Observable<Array<StateCity>> {
+    return this._http.get('assets/mock/cities.json').pipe(
+      map((list: Array<StateCity>) => {
+        // console.log(list);
+        return list;
       })
     );
   }

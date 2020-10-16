@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { SignInSignUpService } from '../../../../auth/sign-in-sign-up.service';
 
@@ -8,6 +8,7 @@ import { SignInSignUpService } from '../../../../auth/sign-in-sign-up.service';
   styleUrls: ['header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+
   constructor(
     private signInSignUpService: SignInSignUpService,
     private router: Router
@@ -16,8 +17,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {}
 
   public signOutUser() {
-    this.signInSignUpService.signOutUser().subscribe(()=>{
-      this.router.navigate(['/']);
+    this.signInSignUpService.signOutUser().subscribe(() => {
+      this.router.navigate(['/auth']);
     });
   }
 }

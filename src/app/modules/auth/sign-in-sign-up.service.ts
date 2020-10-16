@@ -13,7 +13,7 @@ export class SignInSignUpService {
 
   public saveUserDetails(param: { compositeField: string; password: string }) {
     localStorage.setItem(param.compositeField, param.password);
-    this.setUserLoggedInStorage();
+    this.setUserLoggedInStorage(userRegisterRequest.compositeField);
   }
 
   public signInUser(userLogin: UserLogin): boolean {
@@ -23,7 +23,7 @@ export class SignInSignUpService {
 
   public signOutUser() {
     return new Observable((observer) => {
-      localStorage.clear();
+      // localStorage.clear();
       observer.next();
       setTimeout(() => {
         observer.complete();
@@ -31,7 +31,7 @@ export class SignInSignUpService {
     });
   }
 
-  public setUserLoggedInStorage() {
-    localStorage.setItem('isUserLoggedIn', 'true');
+  public setUserLoggedInStorage(userID: string) {
+    localStorage.setItem('userId', userID);
   }
 }
